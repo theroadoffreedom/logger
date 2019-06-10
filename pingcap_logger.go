@@ -1,18 +1,18 @@
 package logger
 
 import (
-	"os"
-	"path/filepath"
-	"strings"
 	"bytes"
 	"fmt"
+	"os"
+	"path/filepath"
 	"sort"
+	"strings"
 
+	"github.com/pingcap/errors"
 	zaplog "github.com/pingcap/log"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/natefinch/lumberjack.v2"
-	"github.com/pingcap/errors"
-	
+
 	// self make module
 	cerror "github.com/theroadoffreedom/cerror"
 )

@@ -1,9 +1,8 @@
 package logger
 
-
 import (
-	"testing"
 	"context"
+	"testing"
 
 	"go.uber.org/zap"
 )
@@ -11,11 +10,12 @@ import (
 func TestLogger(t *testing.T) {
 
 	config := NewConfig()
-	config.Level = "info"
+	config.Level = "debug"
 	config.FileName = "logger_test.log"
+	config.FileDir = "/tmp"
 	SetupLogger(config)
 	//
-	Log(context.Background()).Info("test")	
-	Log(context.Background()).Info("test",
+	Log(context.Background()).Info("test")
+	Log(context.Background()).Debug("test",
 		zap.String("server addr", "xxx"), zap.String("interval", "123"))
 }
