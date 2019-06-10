@@ -4,16 +4,16 @@ package logger
 import (
 	"testing"
 	"context"
+
+	"go.uber.org/zap"
 )
 
 func TestLogger(t *testing.T) {
 
 	config := NewConfig()
-	c.Level = "info"
-	c.FileName = "logger_test.log"
-	c.FileDir = "/Users/ccongdeng/Project"
+	config.Level = "info"
+	config.FileName = "logger_test.log"
 	SetupLogger(config)
-	
 	//
 	Log(context.Background()).Info("test")	
 	Log(context.Background()).Info("test",
